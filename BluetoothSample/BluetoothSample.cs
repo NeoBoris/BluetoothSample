@@ -6,20 +6,15 @@ namespace BluetoothSample
 {
 	public class App : Application
 	{
-		public App ()
+        public const string NativeNavigationMessage = "BluetoothSample.NativeNavigationMessage";
+
+        public App ()
 		{
-			// The root page of your application
-			MainPage = new ContentPage {
-				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-				}
-			};
+            // 参考: https://github.com/xamarin/xamarin-forms-samples/tree/master/Forms2Native
+
+            NavigationPage mainNav = new NavigationPage(new MyFirstPage());
+
+            MainPage = mainNav;
 		}
 
 		protected override void OnStart ()
