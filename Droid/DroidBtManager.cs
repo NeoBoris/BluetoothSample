@@ -13,7 +13,7 @@ using Android.Bluetooth;
 
 namespace BluetoothSample.Droid
 {
-    public class AndroidBluetoothChatterImpl : IBluetoothChatter
+    public class DroidBtManager : IBtManager
     {
         // éQçl: https://github.com/xamarin/monodroid-samples/blob/master/BluetoothChat/DeviceListActivity.cs
         private BluetoothAdapter m_btAdapter;
@@ -30,15 +30,21 @@ namespace BluetoothSample.Droid
 
         }
 
-        public List<String> GetPairedDevices()
+        public List<BtDevice> GetPairedDevices()
         {
-            List<String> devices = new List<String>();
+            List<BtDevice> devices = new List<BtDevice>();
 
             var pairedDevices = m_btAdapter.BondedDevices;
-            foreach (var device in pairedDevices)
+            foreach (var dev in pairedDevices)
             {
-                devices.Add(device.Name + "\n" + device.Address);
+                devices.Add(new BtDevice (dev.Name, dev.Address));
             }
+            return devices;
+        }
+        public List<BtDevice> GetAvailableDevices()
+        {
+            List<BtDevice> devices = new List<BtDevice>();
+            // TODO
             return devices;
         }
 

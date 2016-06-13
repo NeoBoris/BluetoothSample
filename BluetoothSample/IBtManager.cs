@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BluetoothSample
 {
-    public interface IBluetoothChatter
+    public interface IBtManager
     {
         void Init();
-        List<String> GetPairedDevices();
+        List<BtDevice> GetPairedDevices();
+        List<BtDevice> GetAvailableDevices();
         void StartDiscovery();
     }
 }

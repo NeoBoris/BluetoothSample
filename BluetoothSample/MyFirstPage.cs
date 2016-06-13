@@ -30,7 +30,7 @@ namespace BluetoothSample
 
         public void OnButtonTestClicked (object o, EventArgs e)
         {
-            Navigation.PushAsync(new MySecondPage());
+            Navigation.PushAsync(new BtDeviceListPage());
         }
     }
 }

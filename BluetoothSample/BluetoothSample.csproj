@@ -31,9 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BluetoothSample.cs" />
-    <Compile Include="IBluetoothChatter.cs" />
+    <Compile Include="BtDevice.cs" />
+    <Compile Include="BtDeviceListView.cs" />
+    <Compile Include="IBtManager.cs" />
     <Compile Include="MyFirstPage.cs" />
-    <Compile Include="MySecondPage.cs" />
+    <Compile Include="BtDeviceListPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
